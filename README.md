@@ -9,17 +9,19 @@ npm install debug-stream
 ## Usage
 
 ``` js
-var debugStream = require('debug-stream')
+var debugStream = require('debug-stream')('my-app')
 
 process.stdin
-  .pipe(debugStream('my-app'))
+  .pipe(debugStream())
   .resume() // just drain it
 
 // or if you're already using debug
 
 var debug = require('debug')('my-app')
+var debugStream = require('debug-stream')(debug)
+
 process.stdin
-  .pipe(debugStream(debug))
+  .pipe(debugStream())
   .resume()
 ```
 
@@ -29,10 +31,10 @@ in the stream. If the stream is an object stream it will run debug on every obje
 You can add an optional format string as well
 
 ``` js
-var debugStream = require('debug-stream')
+var debugStream = require('debug-stream')('my-app')
 
 process.stdin
-  .pipe(debugStream('my-app', 'process.stdin: %s'))
+  .pipe(debugStream('process.stdin: %s'))
   .resume() // just drain it
 ```
 
@@ -40,7 +42,7 @@ The debug stream behaives as pass through stream so can just insert it in any ex
 
 ``` js
 inputStream
-  .pipe(debugStream('my-app'))
+  .pipe(debugStream())
   .pipe(outputStream)
 ```
 
