@@ -29,6 +29,14 @@ process.stdin
   .resume() // just drain it
 ```
 
+The debug stream behaives as pass through stream so can just insert it in any existing pipe chain
+
+``` js
+inputStream
+  .pipe(debugStream('my-app'))
+  .pipe(outputStream)
+```
+
 ## License
 
 MIT
