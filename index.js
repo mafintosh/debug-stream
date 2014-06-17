@@ -3,7 +3,7 @@ var through = require('through2')
 var split = require('split')
 
 module.exports = function(name, fmt) {
-  var d = debug(name)
+  var d = typeof name === 'function' ? name : debug(name)
   var run = fmt ?
     function(line) {
       d(fmt, line)

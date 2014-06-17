@@ -14,6 +14,13 @@ var debugStream = require('debug-stream')
 process.stdin
   .pipe(debugStream('my-app'))
   .resume() // just drain it
+
+// or if you're already using debug
+
+var debug = require('debug')('my-app')
+process.stdin
+  .pipe(debugStream(debug))
+  .resume()
 ```
 
 Running the above program with `DEBUG=*` will use the [debug module](https://github.com/visionmedia/debug) on every line
