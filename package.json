@@ -1,0 +1,25 @@
+{
+  "name": "debug-stream",
+  "version": "0.0.0",
+  "description": "use the debug module on a stream",
+  "main": "index.js",
+  "dependencies": {
+    "debug": "^1.0.2",
+    "split": "^0.3.0",
+    "through2": "^0.5.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mafintosh/debug-stream"
+  },
+  "keywords": [
+    "debug",
+    "stream"
+  ],
+  "author": "Mathias Buus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mafintosh/debug-stream/issues"
+  },
+  "homepage": "https://github.com/mafintosh/debug-stream"
+}
