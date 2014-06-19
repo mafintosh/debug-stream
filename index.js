@@ -11,10 +11,12 @@ module.exports = function(name) {
     }
   }
 
-  return function(fmt) {
-    var run = fmt ?
+  return function() {
+    var args = arguments.length && Array.prototype.slice.call(arguments)
+
+    var run = args ?
       function(line) {
-        d(fmt, line)
+        d.apply(d, args.concat(line))
       } :
       function(line) {
         d(line)
