@@ -45,6 +45,12 @@ inputStream
   .pipe(debugStream())
   .pipe(outputStream)
 ```
+## Browser support
+
+As with debug, this module also supports the browser environment through either browserify or webpack.
+
+To enable the functionality, you need to run `require('debug').enable('*')` in your console. It will persist
+this setting in localStorage, until you run `require('debug').disable()`.
 
 ## License
 

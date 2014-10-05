@@ -5,7 +5,11 @@ var split = require('split')
 module.exports = function(name) {
   var d = typeof name === 'function' ? name : debug(name)
 
-  if (!process.env.DEBUG) {
+  try {
+    var enabled = process.env.DEBUG || localStorage.debug
+  } catch (e) {}
+
+  if (!enabled) {
     return function() {
       return through.obj()
     }
