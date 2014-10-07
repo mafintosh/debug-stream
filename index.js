@@ -28,7 +28,11 @@ module.exports = function(name) {
 
     var s = split(run)
 
-    return through.obj(function(data, enc, cb) {
+    return through({
+      encoding: 'utf8',
+      decodeStrings: false,
+      objectMode: true
+    }, function(data, enc, cb) {
       if (typeof data === 'string' || Buffer.isBuffer(data)) s.write(data)
       else run(data)
       cb(null, data)
