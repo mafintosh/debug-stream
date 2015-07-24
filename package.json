@@ -4,7 +4,7 @@
   "description": "use the debug module on a stream",
   "main": "index.js",
   "dependencies": {
-    "debug": "^1.0.2",
+    "debug": "^2.2.0",
     "through2": "^2.0.0"
   },
   "repository": {
