@@ -1,6 +1,6 @@
 {
   "name": "debug-stream",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "use the debug module on a stream",
   "main": "index.js",
   "dependencies": {
