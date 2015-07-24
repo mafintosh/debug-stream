@@ -1,6 +1,5 @@
 var debug = require('debug')
 var through = require('through2')
-var split = require('split')
 
 module.exports = function(name) {
   var d = typeof name === 'function' ? name : debug(name)
@@ -26,11 +25,8 @@ module.exports = function(name) {
         d(line)
       }
 
-    var s = split(run)
-
     return through.obj(function(data, enc, cb) {
-      if (typeof data === 'string' || Buffer.isBuffer(data)) s.write(data)
-      else run(data)
+      run(data)
       cb(null, data)
     })
   }

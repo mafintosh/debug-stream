@@ -25,8 +25,8 @@ process.stdin
   .resume()
 ```
 
-Running the above program with `DEBUG=*` will use the [debug module](https://github.com/visionmedia/debug) on every line
-in the stream. If the stream is an object stream it will run debug on every object in the stream.
+Running the above program with `DEBUG=*` will use the [debug module](https://github.com/visionmedia/debug) on every buffer/object
+in the stream.
 
 You can add an optional format string as well
 
